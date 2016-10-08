@@ -1,0 +1,21 @@
+{
+  "name": "Social Browsing",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Browse web pages with friends.",
+  "permissions": [
+    "tabs",
+    "http://social-browsing.herokuapp.com/"
+  ],
+  "browser_action": {
+      "default_title": "Social Browsing",
+      "default_popup": "popup.html"
+  },
+  "background": {
+      "scripts": [
+        "jquery.js",
+        "background.js"
+      ],
+      "persistent": true
+  }
+}

@@ -14,6 +14,7 @@ post '/update_current' do
     'url' => params[:url].to_s,
     'date' => params[:date].to_s
   })
+  ''
 end
 
 get '/get_browsing_data' do

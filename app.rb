@@ -10,10 +10,9 @@ get '/' do
 end
 
 post '/update_current' do
-  content_type :json
   browsing_data.push({
-    'url' => params[:url],
-    'date' => params[:date]
+    'url' => params[:url].to_s,
+    'date' => params[:date].to_s
   })
 end
 

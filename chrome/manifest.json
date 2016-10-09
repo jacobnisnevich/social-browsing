@@ -5,7 +5,7 @@
   "description": "Browse web pages with friends.",
   "permissions": [
     "tabs",
-    "http://social-browsing.herokuapp.com/"
+    "http://*/"
   ],
   "browser_action": {
       "default_title": "Social Browsing",

@@ -16,7 +16,7 @@ function updateCurrent(tab) {
     if (tab.url != currentURL) {
         currentURL = tab.url;
 
-        $.post("http://www.social-browsing.herokuapp.com/update_current", {
+        $.post("http://social-browsing.herokuapp.com/update_current", {
             url: tab.url, 
             date: Date.now()
         });

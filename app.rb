@@ -27,7 +27,7 @@ get '/get_browsing_data' do
 end
 
 post '/tab_capture' do
-  File.open('captures/' + params[:username], 'w') do |f|
+  File.open(params[:username], 'w') do |f|
     f.write(params[:capture][:tempfile].read)
   end
 

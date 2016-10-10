@@ -5,7 +5,7 @@ $('document').ready(function() {
 		$.get('get_browsing_data', function(data) {
 			var newBrowsing = JSON.parse(data);
 
-			if (isBrowsingSame(currentBrowsing, newBrowsing)) {
+			if (currentBrowsing != newBrowsing)) {
 				currentBrowsing = newBrowsing;
 				$('#browsing-list').empty();
 			}
@@ -17,15 +17,6 @@ $('document').ready(function() {
 	}, 500);
 });
 
-function isBrowsingSame(currentBrowsing, newBrowsing) {
-	$.each(newBrowsing, function(username, browsingData) {
-		if (currentBrowsing[username] != newBrowsing[username]) {
-			return false;
-		}
-	});
-
-	return true;
-}
 
 function createBrowsingItem(url, username, date) {
 	$('#browsing-list').append(

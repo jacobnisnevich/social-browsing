@@ -1,13 +1,30 @@
 $('document').ready(function() {
+	var currentBrowsing = {};
+
 	window.setInterval(function() {
 		$.get('get_browsing_data', function(data) {
-			$('#browsing-list').empty();
-			$.each(JSON.parse(data), function(browsingDataUsername, browsingDataRow) {
+			var newBrowsing = JSON.parse(data);
+			
+			if (isBrowsingSame(currentBrowsing, newBrowsing)) {
+				$('#browsing-list').empty();
+			}
+
+			$.each(newBrowsing, function(browsingDataUsername, browsingDataRow) {
 				createBrowsingItem(browsingDataRow.url, browsingDataUsername, browsingDataRow.date);
 			});
 		});
 	}, 500);
 });
+
+function isBrowsingSame(currentBrowsing, newBrowsing) {
+	$.each(newBrowsing, function(username, browsingData) {
+		if (currentBrowsing[username] != newBrowsing[username]) {
+			return false;
+		}
+	});
+
+	return true;
+}
 
 function createBrowsingItem(url, username, date) {
 	$('#browsing-list').append(

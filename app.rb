@@ -3,7 +3,7 @@ require 'json'
 
 require File.expand_path('../lib/social-browsing.rb', __FILE__)
 
-browsing_data = []
+browsing_data = {}
 
 get '/' do
   File.read(File.join('public', 'index.html'))

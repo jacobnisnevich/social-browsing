@@ -1,0 +1,64 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+}
+
+.container {
+	margin: 0 20%;
+}
+
+#header {
+	width: 100%;
+	height: 64px;
+	background-color: #ff5252;
+}
+
+#header-container {
+	height: 100%;
+	position: relative;
+}
+
+#header-text {
+	position: absolute;
+	font-family: 'Quicksand', sans-serif;
+	color: white;
+	height: 40px;
+	font-size: 36px;
+	line-height: 36px;
+	display: inline-block;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+#browsing-list {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.browsing-item {
+	width: 400px;
+	height: 300px;
+	margin: 20px;
+	background: #DDD;
+	border-radius: 5px;
+	box-shadow: 2px 2px 10px #999;
+}
+
+.browsing-iframe-container > iframe {
+	border: 2px solid #CCC;
+	border-radius: 5px;
+	margin: 20px 20px 0 20px;
+	width: 356px;
+	height: 200px;
+}
+
+.browsing-description-container {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	padding: 20px;
+}

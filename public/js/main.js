@@ -1,9 +1,14 @@
 $('document').ready(function() {
+	var usernameUrlMapping = {};
+
 	window.setInterval(function() {
 		$.get('get_browsing_data', function(data) {
 			JSON.parse(data).forEach(function(browsingDataRow) {
 				$('#browsing-list').empty();
-				createBrowsingItem(browsingDataRow.url, browsingDataRow.username, browsingDataRow.date);
+				if (usernameUrlMapping[browsingDataRow.username] != browsingDataRow.url) {
+					createBrowsingItem(browsingDataRow.url, browsingDataRow.username, browsingDataRow.date);
+					usernameUrlMapping[browsingDataRow.username] = browsingDataRow.url;
+				}
 			});
 		});
 	}, 500);

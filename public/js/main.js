@@ -3,12 +3,16 @@ $('document').ready(function() {
 
 	window.setInterval(function() {
 		$.get('get_browsing_data', function(data) {
+			var i = 0;
 			JSON.parse(data).forEach(function(browsingDataRow) {
-				$('#browsing-list').empty();
 				if (usernameUrlMapping[browsingDataRow.username] != browsingDataRow.url) {
+					if (i == 0) {
+						$('#browsing-list').empty();
+					}
 					createBrowsingItem(browsingDataRow.url, browsingDataRow.username, browsingDataRow.date);
 					usernameUrlMapping[browsingDataRow.username] = browsingDataRow.url;
 				}
+				i++;
 			});
 		});
 	}, 500);

@@ -18,13 +18,15 @@ $('document').ready(function() {
 });
 
 function isBrowsingSame(currentBrowsing, newBrowsing) {
+	var same = true;
+
 	$.each(newBrowsing, function(username, browsingData) {
-		if (currentBrowsing[username] != newBrowsing[username]) {
-			return false;
+		if (currentBrowsing[username] != newBrowsing[username]) {	
+			same = false;
 		}
 	});
 
-	return true;
+	return same;
 }
 
 function createBrowsingItem(url, username, date) {

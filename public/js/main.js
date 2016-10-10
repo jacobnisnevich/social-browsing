@@ -2,7 +2,7 @@ $('document').ready(function() {
 	window.setInterval(function() {
 		$.get('get_browsing_data', function(data) {
 			$('#browsing-list').empty();
-			$.each(JSON.parse(data), (function(browsingDataUsername, browsingDataRow) {
+			$.each(JSON.parse(data), function(browsingDataUsername, browsingDataRow) {
 				createBrowsingItem(browsingDataRow.url, browsingDataUsername, browsingDataRow.date);
 			});
 		});

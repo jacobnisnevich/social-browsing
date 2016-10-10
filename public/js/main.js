@@ -34,7 +34,7 @@ function createBrowsingItem(url, username, date) {
 				'<iframe src="' + url + '" target="_parent"></iframe>' +  
 			'</div>' + 
 			'<div class="browsing-description-container">' + 
-				'<div class="browsing-username">' + '</div>' + 
+				'<div class="browsing-username">' + username + '</div>' + 
 				'<div class="browsing-timestamp">' + (new Date(parseInt(date)).toLocaleString()) + '</div>' + 
 			'</div>' + 
 		'</div>'

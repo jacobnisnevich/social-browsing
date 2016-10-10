@@ -8,11 +8,11 @@ $('document').ready(function() {
 			if (!isBrowsingSame(currentBrowsing, newBrowsing)) {
 				currentBrowsing = newBrowsing;
 				$('#browsing-list').empty();
-			}
 
-			$.each(newBrowsing, function(browsingDataUsername, browsingDataRow) {
-				createBrowsingItem(browsingDataRow.url, browsingDataUsername, browsingDataRow.date);
-			});
+				$.each(newBrowsing, function(browsingDataUsername, browsingDataRow) {
+					createBrowsingItem(browsingDataRow.url, browsingDataUsername, browsingDataRow.date);
+				});
+			}
 		});
 	}, 500);
 });

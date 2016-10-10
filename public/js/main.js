@@ -2,8 +2,8 @@ $('document').ready(function() {
 	window.setInterval(function() {
 		$.get('get_browsing_data', function(data) {
 			$('#browsing-list').empty();
-			JSON.parse(data).forEach(function(browsingDataRow) {
-				createBrowsingItem(browsingDataRow.url, browsingDataRow.username, browsingDataRow.date);
+			$.each(JSON.parse(data), (function(browsingDataUsername, browsingDataRow) {
+				createBrowsingItem(browsingDataRow.url, browsingDataUsername, browsingDataRow.date);
 			});
 		});
 	}, 500);

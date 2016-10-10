@@ -10,9 +10,9 @@ get '/' do
 end
 
 post '/update_current' do
-  browsing_data['username'] = {
-    'url' => params[:url].to_s,
-    'date' => params[:date].to_s
+  browsing_data[params[:username]] = {
+    'url' => params[:url],
+    'date' => params[:date]
   }
   ''
 end

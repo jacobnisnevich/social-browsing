@@ -26,7 +26,7 @@ function createBrowsingItem(url, username, date) {
 			'</div>' + 
 			'<div class="browsing-description-container">' + 
 				'<div class="browsing-username">' + '</div>' + 
-				'<div class="browsing-timestamp">' + (new Date(parseInt(date.date)).toLocaleString()) + '</div>' + 
+				'<div class="browsing-timestamp">' + (new Date(parseInt(date)).toLocaleString()) + '</div>' + 
 			'</div>' + 
 		'</div>'
 	);

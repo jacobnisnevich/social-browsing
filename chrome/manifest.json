@@ -5,7 +5,9 @@
   "description": "Browse web pages with friends.",
   "permissions": [
     "tabs",
-    "http://*/"
+    "activeTab",
+    "http://*/",
+    "<all_urls>"
   ],
   "browser_action": {
       "default_title": "Social Browsing",

@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'json'
+require 'data_uri'
 
 require File.expand_path('../lib/social-browsing.rb', __FILE__)
 
@@ -28,10 +29,9 @@ end
 
 post '/tab_capture' do
   p params
-  
-  File.open(params[:username] + '.png', 'w') do |f|
-    f.write(params[:capture][:tempfile].read)
-  end
+
+  uri = URI::Data.new(params['capture'])
+  File.write(params['username'] + '.jpg', uri.data)
 
   'The file was successfully uploaded!'
 end

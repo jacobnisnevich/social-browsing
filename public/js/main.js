@@ -1,18 +1,9 @@
 $('document').ready(function() {
-	var usernameUrlMapping = {};
-
 	window.setInterval(function() {
 		$.get('get_browsing_data', function(data) {
-			var i = 0;
+			$('#browsing-list').empty();
 			JSON.parse(data).forEach(function(browsingDataRow) {
-				if (usernameUrlMapping[browsingDataRow.username] != browsingDataRow.url) {
-					if (i == 0) {
-						$('#browsing-list').empty();
-					}
-					createBrowsingItem(browsingDataRow.url, browsingDataRow.username, browsingDataRow.date);
-					usernameUrlMapping[browsingDataRow.username] = browsingDataRow.url;
-				}
-				i++;
+				createBrowsingItem(browsingDataRow.url, browsingDataRow.username, browsingDataRow.date);
 			});
 		});
 	}, 500);
@@ -21,8 +12,7 @@ $('document').ready(function() {
 function createBrowsingItem(url, username, date) {
 	$('#browsing-list').append(
 		'<div class="browsing-item">' + 
-			'<div class="browsing-iframe-container">' + 
-				'<iframe src="' + url + '" target="_blank"></iframe>' + 
+			'<div class="browsing-iframe-container">' + url +  
 			'</div>' + 
 			'<div class="browsing-description-container">' + 
 				'<div class="browsing-username">' + '</div>' + 

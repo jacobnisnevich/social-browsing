@@ -4,6 +4,7 @@ require 'json'
 require File.expand_path('../lib/social-browsing.rb', __FILE__)
 
 browsing_data = {}
+id = 0;
 
 get '/' do
   File.read(File.join('public', 'index.html'))
@@ -14,9 +15,13 @@ post '/update_current' do
     'url' => params[:url],
     'date' => params[:date]
   }
-  ''
+
+  id += 1
 end
 
 get '/get_browsing_data' do
-  browsing_data.to_json
+  {
+    'data' => browsing_data,
+    'id' => id
+  }.to_json
 end

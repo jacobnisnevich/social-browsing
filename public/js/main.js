@@ -5,29 +5,17 @@ $('document').ready(function() {
 		$.get('get_browsing_data', function(data) {
 			var newBrowsing = JSON.parse(data);
 
-			if (!isBrowsingSame(currentBrowsing, newBrowsing)) {
+			if (currentBrowsing.id != newBrowsing.id)) {
 				currentBrowsing = newBrowsing;
 				$('#browsing-list').empty();
 
-				$.each(newBrowsing, function(browsingDataUsername, browsingDataRow) {
+				$.each(newBrowsing.data, function(browsingDataUsername, browsingDataRow) {
 					createBrowsingItem(browsingDataRow.url, browsingDataUsername, browsingDataRow.date);
 				});
 			}
 		});
 	}, 500);
 });
-
-function isBrowsingSame(currentBrowsing, newBrowsing) {
-	var same = true;
-
-	$.each(newBrowsing, function(username, browsingData) {
-		if (currentBrowsing[username].url != newBrowsing[username].url) {	
-			same = false;
-		}
-	});
-
-	return same;
-}
 
 function createBrowsingItem(url, username, date) {
 	$('#browsing-list').append(

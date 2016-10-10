@@ -5,7 +5,7 @@ $('document').ready(function() {
 		$.get('get_browsing_data', function(data) {
 			var newBrowsing = JSON.parse(data);
 
-			if (currentBrowsing.id != newBrowsing.id)) {
+			if (currentBrowsing.id != newBrowsing.id) {
 				currentBrowsing = newBrowsing;
 				$('#browsing-list').empty();
 

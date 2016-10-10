@@ -14,7 +14,7 @@ $('document').ready(function() {
 				});
 			}
 		});
-	}, 500);
+	}, 1000);
 });
 
 function createBrowsingItem(url, username, date) {

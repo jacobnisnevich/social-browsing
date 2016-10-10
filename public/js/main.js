@@ -21,7 +21,7 @@ function createBrowsingItem(url, username, date) {
 	$('#browsing-list').append(
 		'<div class="browsing-item">' + 
 			'<div class="browsing-img-container">' + 
-				'<img src="' + username + '.png"></iframe>' +  
+				'<img src="' + username + '.jpg"></iframe>' +  
 			'</div>' + 
 			'<div class="browsing-description-container">' + 
 				'<div class="browsing-username">' + username + '</div>' + 

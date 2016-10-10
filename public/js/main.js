@@ -21,7 +21,7 @@ function isBrowsingSame(currentBrowsing, newBrowsing) {
 	var same = true;
 
 	$.each(newBrowsing, function(username, browsingData) {
-		if (currentBrowsing[username] != newBrowsing[username]) {	
+		if (currentBrowsing[username].url != newBrowsing[username].url) {	
 			same = false;
 		}
 	});

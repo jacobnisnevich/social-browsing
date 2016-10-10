@@ -12,7 +12,8 @@ $('document').ready(function() {
 function createBrowsingItem(url, username, date) {
 	$('#browsing-list').append(
 		'<div class="browsing-item">' + 
-			'<div class="browsing-iframe-container">' + url +  
+			'<div class="browsing-iframe-container">' + 
+				'<iframe src="' + url + '" target="_parent"></iframe>' +  
 			'</div>' + 
 			'<div class="browsing-description-container">' + 
 				'<div class="browsing-username">' + '</div>' + 

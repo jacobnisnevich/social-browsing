@@ -7,7 +7,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     });
 });
 
-chrome.tabs.onActivated.addListener(function(e){ 
+chrome.tabs.onActivated.addListener(function(e) { 
     chrome.tabs.get(e.tabId, function(tab){ 
         updateCurrent(tab);
     }); 

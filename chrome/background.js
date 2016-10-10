@@ -22,5 +22,13 @@ function updateCurrent(tab) {
             username: username,
             date: Date.now()
         });
+
+        chrome.tabs.captureVisibleTab(null, function(img) {
+            var xhr = new XMLHttpRequest(), formData = new FormData();  
+            formData.append("capture", img);
+            formData.append("username", username)
+            xhr.open("POST", "http://social-browsing.herokuapp.com/tab_capture", true);
+            xhr.send(formData);
+        });
     }
 }

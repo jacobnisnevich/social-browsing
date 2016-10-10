@@ -12,6 +12,7 @@ end
 post '/update_current' do
   browsing_data.push({
     'url' => params[:url].to_s,
+    'username' => params[:username].to_s,
     'date' => params[:date].to_s
   })
   ''

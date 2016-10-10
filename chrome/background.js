@@ -18,7 +18,8 @@ function updateCurrent(tab) {
         currentURL = tab.url;
 
         $.post("http://social-browsing.herokuapp.com/update_current", {
-            url: tab.url, 
+            url: tab.url,
+            username: username,
             date: Date.now()
         });
     }
